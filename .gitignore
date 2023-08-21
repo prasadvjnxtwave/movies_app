@@ -1,0 +1,14 @@
+/.vs/
+*/.venv/*
+/.venv/*
+*.idea/
+/.history/*
+node_modules
+*.pyc
+*.out
+*.out
+*.zip
+*readme.txt
+.DS_Store
+json_csv.py
+/_projects

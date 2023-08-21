@@ -1,0 +1,257 @@
+.account-container {
+  background-color: #ffffff;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.account-information-container {
+  align-self: center;
+  width: 82vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .account-information-container {
+    width: 78vw;
+    margin-top: 42px;
+  }
+}
+
+.account-heading {
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #131313;
+  height: 28px;
+  width: 90px;
+  margin-bottom: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .account-heading {
+    font-size: 36px;
+    height: 42px;
+    width: 135px;
+    margin-bottom: 12px;
+  }
+}
+
+.line-element {
+  background-color: #cbd5e1;
+  border-radius: 10px;
+  height: 2px;
+  width: 296px;
+  margin-top: 0px;
+  margin-right: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .line-element {
+    width: 100%;
+    margin-top: 0px;
+    margin-right: 0px;
+  }
+}
+
+.membership-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media screen and (min-width: 768px) {
+  .membership-container {
+    justify-content: flex-start;
+  }
+}
+
+.membership-heading {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #94a3b8;
+  height: 23px;
+  width: 106px;
+}
+
+@media screen and (min-width: 768px) {
+  .membership-heading {
+    font-size: 24px;
+    height: 31px;
+    width: 142px;
+    margin-top: 25px;
+  }
+}
+
+.membership-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .membership-details-container {
+    margin-left: 22px;
+  }
+}
+
+.membership-username {
+  height: 21px;
+  width: 172px;
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  color: #1e293b;
+}
+
+@media screen and (min-width: 768px) {
+  .membership-username {
+    height: 31px;
+    width: 259px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+}
+
+.membership-password {
+  font-family: 'Roboto';
+  font-weight: 500;
+  font-size: 16px;
+  color: #64748b;
+  height: 21px;
+  width: 182px;
+}
+
+@media screen and (min-width: 768px) {
+  .membership-password {
+    height: 31px;
+    width: 279px;
+    font-weight: 400;
+    font-size: 24px;
+  }
+}
+
+.plan-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .plan-container {
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.plan-details-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .plan-details-container {
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+}
+
+.plan-paragraph {
+  color: #1e293b;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  height: 21px;
+  width: 64px;
+  margin-right: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .plan-paragraph {
+    font-size: 24px;
+    font-weight: 400;
+    height: 31px;
+    width: 96px;
+    margin-right: 22px;
+  }
+}
+
+.plan-details {
+  border: 1px solid #1e293b;
+  border-radius: 2px;
+  box-sizing: border-box;
+  height: 22px;
+  width: 64px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  color: #1e293b;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .plan-details {
+    height: 27px;
+    width: 79px;
+    font-size: 18px;
+  }
+}
+
+.logout-button-container {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 52px;
+}
+
+@media screen and (min-width: 768px) {
+  .logout-button-container {
+    margin-top: 72px;
+  }
+}
+
+.logout-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  height: 40px;
+  width: 91px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Roboto';
+  cursor: pointer;
+  outline: none;
+}
+
+.logout-button:hover {
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+}
+
+@media screen and (min-width: 768px) {
+  .logout-button {
+    font-weight: 700;
+    margin-right: 0px;
+  }
+}

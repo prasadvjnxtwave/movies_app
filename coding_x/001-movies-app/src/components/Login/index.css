@@ -1,0 +1,136 @@
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #131313;
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  .login-container {
+    background-image: url('https://res.cloudinary.com/do4qwwms8/image/upload/v1635419403/netfilx_1_nynqkx.png');
+    background-position: center;
+    background-size: 100% 100%;
+  }
+}
+
+.login-website-logo-container {
+  display: flex;
+  width: 100%;
+}
+
+.login-website-logo {
+  margin: 48px;
+  width: 100px;
+  height: 27px;
+}
+
+@media screen and (min-width: 768px) {
+  .login-website-logo {
+    width: 180px;
+    height: 52px;
+  }
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  height: 100%;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 0;
+  background-color: #0c0b10;
+  opacity: 0.8;
+  width: 90%;
+  max-width: 350px;
+  border-radius: 8px;
+  box-shadow: 0px 8px 40px #0c0b10;
+  padding: 32px 16px 32px 16px;
+}
+
+.sign-in-heading {
+  font-size: 32px;
+  line-height: 40px;
+  font-weight: 500;
+  font-family: 'Roboto';
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .login-form {
+    max-width: 450px;
+    padding: 48px;
+  }
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.input-label {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 0px;
+}
+
+.input-field {
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #d7dfe9;
+  background-color: #333333;
+  color: #ffffff;
+  border-radius: 2px;
+  margin-top: 5px;
+  padding: 8px 16px 8px 16px;
+  outline: none;
+  border: none;
+}
+
+.login-button {
+  color: #ffffff;
+  background-color: #e50914;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 14px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+  margin-top: 24px;
+  margin-bottom: 16px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-right: 20px;
+  padding-left: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .login-button {
+    margin-top: 32px;
+    margin-bottom: 0px;
+  }
+}
+
+.error-message {
+  align-self: start;
+  color: #ff0b37;
+  font-family: 'Roboto';
+  font-size: 12px;
+  line-height: 1.33;
+  margin-top: 3px;
+  margin-bottom: 0px;
+}

@@ -1,0 +1,54 @@
+.App {
+  padding: 10px 35px;
+}
+
+.loader-container {
+  height: 170px;
+  background-color: #0d0d0d;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    padding: 5px 60px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .App {
+    padding: 5px 112px;
+  }
+}
+
+.link-item {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.react-slick-item {
+  background: #131313;
+}
+
+.poster {
+  height: 70px;
+  width: 90px;
+  margin-left: 0px;
+  margin-right: 12px;
+  border: none;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .poster {
+    height: 130px;
+    width: 130px;
+    margin: 5px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .poster {
+    height: 180px;
+    width: 265px;
+  }
+}

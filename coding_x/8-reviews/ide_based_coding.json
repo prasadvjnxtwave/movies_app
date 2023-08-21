@@ -1,0 +1,113 @@
+[
+  {
+    "question_id": "f9c59d4d-05ad-49eb-b951-a8fdb5e422a7",
+    "question_text": "In this assignment let's build a **Reviews App** by applying the concepts we\nhave learned till now.\n\n### Refer to image below:\n\n<br/>\n<div style=\"text-align: center;\">\n\n<img src=\"https://assets.ccbp.in/frontend/content/react-js/reviews-app-output-v2.gif\" alt=\"reviews-app-output\" style=\"max-width:70%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12)\">\n\n</div>\n\n<br/>\n\n### Design Files\n\n- [Extra Small (Size < 576px), Small (Size >= 576px)](https://assets.ccbp.in/frontend/content/react-js/reviews-app-sm-output.png)\n- [Medium (Size >= 768px), Large (Size >= 992px) and Extra Large (Size >= 1200px)](https://assets.ccbp.in/frontend/content/react-js/reviews-app-lg-output.png)\n\n## Project Set Up Instructions\n\n- Download dependencies by running `npm install`\n- Start up the app using `npm start`\n\n### Project Completion Instructions\n\n#### Add Functionality\n\nThe app must have the following functionalities\n\n- When the HTML button element with id `leftArrow` is clicked the previous\n  review details like profile image, username, company, and description should\n  be displayed\n- When the HTML button element with id `rightArrow` is clicked the next review\n  details like profile image, username, company, and description should be\n  displayed\n- If the review that is being displayed is the first review in the list of\n  reviews\n  - There should not be any state change when HTML button element with id\n    `leftArrow` is clicked\n- If the review that is being displayed is the last review in the list of\n  reviews\n\n  - There should not be any state change when HTML button element with id\n    `rightArrow` is clicked\n\n- The list of reviews is passed to the ReviewsCarousel component as a prop\n  `reviewsData` in the form of an array object.\n\n- Each review object will have the following properties\n\n  | Key         | Data Type |\n  | ----------- | --------- |\n  | imgUrl      | String    |\n  | username    | String    |\n  | companyName | String    |\n  | description | String    |\n\n- Your task is to complete the implementation of\n  - `src/components/ReviewsCarousel/index.js`.\n  - `src/components/ReviewsCarousel/index.css`.\n\n> #### Important Note\n>\n> **The following HTML attributes are required for the HTML button and image\n> elements for the tests to pass**\n>\n> - The HTML button element to check the previous review should have the testid\n>   attribute and its value as `leftArrow`\n> - The HTML button element to check the next review should have the testid\n>   attribute and its value as `rightArrow`\n> - The HTML image elements to display the profile image should have the HTML\n>   attribute `alt` values as `userName-avatar`\n\n### Quick Tips:\n\n- The cursor CSS property sets the type of mouse cursor, if any, to show when\n  the mouse pointer is over an element. Use the CSS property cursor with value\n  `pointer` to indicate a link.\n- An outline is a line that is drawn around an element, outside the border. The\n  outline CSS shorthand property sets all the outline properties. Use the CSS\n  property `outline` with value `none` to hide all the outline properties\n\n### Resources\n\n#### Images\n\n- [https://assets.ccbp.in/frontend/react-js/reviews-bg.png](https://assets.ccbp.in/frontend/react-js/reviews-bg.png)\n- [https://assets.ccbp.in/frontend/react-js/left-arrow-img.png](https://assets.ccbp.in/frontend/react-js/left-arrow-img.png)\n- [https://assets.ccbp.in/frontend/react-js/right-arrow-img.png](https://assets.ccbp.in/frontend/react-js/right-arrow-img.png)\n- [https://assets.ccbp.in/frontend/react-js/wade-warren-img.png](https://assets.ccbp.in/frontend/react-js/wade-warren-img.png)\n- [https://assets.ccbp.in/frontend/react-js/adrian-williams-img.png](https://assets.ccbp.in/frontend/react-js/adrian-williams-img.png)\n- [https://assets.ccbp.in/frontend/react-js/sherry-jhonson-img.png](https://assets.ccbp.in/frontend/react-js/sherry-jhonson-img.png)\n- [https://assets.ccbp.in/frontend/react-js/ronald-jones-img.png](https://assets.ccbp.in/frontend/react-js/ronald-jones-img.png)\n\n#### Colors\n\n<div style=\"background-color: #ffffff ; width: 150px; padding: 10px; color: black\">Hex: #ffffff</div>\n<div style=\"background-color: #171f46 ; width: 150px; padding: 10px; color: white\">Hex: #171f46</div>\n\n#### Font-families\n\n- Roboto\n\n> ### _Things to Keep in Mind_\n>\n> - All components you implement should go in the `src/components` directory.\n> - Don't change the component folder names as those are the files being\n>   imported into the tests.\n> - **Do not remove the pre-filled code**\n> - Want to quickly review some of the concepts you’ve been learning? Take a\n>   look at the Cheat Sheets.\n",
+    "short_text": "Reviews App",
+    "toughness": "EASY",
+    "content_type": "MARKDOWN",
+    "question_type": "IDE_BASED_CODING",
+    "question_key": "reviews_1",
+    "question_asked_by_companies_info": [],
+    "question_format": "CODING_PRACTICE",
+    "ide_session_id": "7ff9edce-384a-43ea-b771-693e76447bc3",
+    "test_cases": [
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_1",
+        "display_text": "Page should consist of HTML heading element with Reviews as text content",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_2",
+        "display_text": "Page should consist of HTML button element with testid attribute value as leftArrow",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_3",
+        "display_text": "Page should consist of HTML button element with testid attribute value as rightArrow",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_4",
+        "display_text": "Page should consist of HTML image element with src attribute and value as path for left arrow image",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_5",
+        "display_text": "Page should consist of HTML image element with src attribute and value as path for right arrow image",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_6",
+        "display_text": "Page should consist of HTML image element with alt text as <username>-avatar",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_7",
+        "display_text": "Page should consist of HTML image element with src attribute and value as path for profile image",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_8",
+        "display_text": "Page should consist of HTML paragraph element with username as text content",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_9",
+        "display_text": "Page should consist of HTML paragraph element with company name as text content",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_10",
+        "display_text": "Page should consist of HTML paragraph element with review description as text content",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_11",
+        "display_text": "When the right arrow is clicked, the user avatar of the next review should be displayed",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_12",
+        "display_text": "When the right arrow is clicked, username, company name, and review description of the next review should be displayed",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_13",
+        "display_text": "When the left arrow is clicked, the user avatar of the previous review should be displayed",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_14",
+        "display_text": "When the left arrow is clicked, username, company name, and review description of the previous review should be displayed",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_15",
+        "display_text": "When viewing the first review, there should not be any state change when the HTML button element with testid attribute value as leftArrow is clicked",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCPUPPE1_TEST_16",
+        "display_text": "When viewing the last review, there should not be any state change when the HTML button element with testid attribute value as rightArrow is clicked",
+        "weightage": 5
+      }
+    ],
+    "multimedia": [],
+    "language": "ENGLISH",
+    "solutions_metadata": [
+      {
+        "order": 1,
+        "title": {
+          "content": "Reviews App",
+          "content_type": "MARKDOWN"
+        },
+        "description": {
+          "content": "An approach to build Reviews app",
+          "content_type": "MARKDOWN"
+        },
+        "ide_session_id": "59454697-7590-4e3d-bcd9-70116d0538d0"
+      }
+    ],
+    "hints": []
+  }
+]

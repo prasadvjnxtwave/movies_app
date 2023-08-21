@@ -1,0 +1,27 @@
+.image-style {
+  height: 70px;
+  width: 90px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+
+@media screen and (min-width: 768px) {
+  .image-style {
+    height: 130px;
+    width: 180px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .image-style {
+    height: 155px;
+    width: 255px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+  }
+}

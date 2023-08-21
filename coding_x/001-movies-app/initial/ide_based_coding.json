@@ -1,0 +1,770 @@
+[
+  {
+    "question_id": "b85355c5-5d52-4765-bdfa-d776728dd547",
+    "ide_session_id": "d86702c7-6e18-42c9-a3ac-225f69263c5d",
+    "short_text": "Movies App",
+    "question_key": "movies_app_1",
+    "question_text": "In this project let's build a **Movies App** by applying the concepts we have learned till now. This project allows you to practice the concepts and techniques learned till React Course and apply them in a concrete project.\n\nYou will demonstrate your skills by creating an app that will fetch data from an internal server using a class component, displaying that data, using **component lifecycle** methods, **routing** concepts, **authentication**, and **authorization**, and adding responsiveness to the website.\n\nThis is an individual assessment. All work must be your own. You will also be given feedback by code reviewers after your project submission.\n\n### Prerequisites\n\n#### UI Prerequisites\n\n<details>\n<summary>Click to view</summary>\n\n- What is Figma?\n  - Figma is a vector graphics editor and prototyping tool which is primarily web-based. You can check more info on the <a href=\"https://www.figma.com/\" target=\"_blank\">Website</a>.\n- Create a Free account in Figma\n  - Kindly follow the instructions as shown in <a href=\"https://www.youtube.com/watch?v=hrHL2VLMl7g&t=37s\" target=\"_blank\">this</a> video to create a Free Figma account. Watch the video upto **00:50**.\n- How to Check CSS in Figma?\n  - Kindly follow the instructions as shown in <a href=\"https://www.youtube.com/watch?v=B242nuM3y2s\" target=\"_blank\">this</a> video to check CSS in the Figma screen. Watch the video upto **02:45**.\n- Export Images in Figma screen\n\n  - Kindly follow the instructions as shown in <a href=\"https://www.youtube.com/watch?v=NpzL1MONwaw\" target=\"_blank\">this</a> video to export images from the Figma screen.\n  - Click on the Export button to get Export options as shown in the below image.\n\n  <div style=\"text-align:center;margin:10px 0px 0px 45px;width:200px;\">\n    <img src=\"https://assets.ccbp.in/frontend/react-js/figma-export-option.png\" />\n  </div>\n\n- Upload your exported images from Figma to Cloudinary and get image URLs from Cloudinary.Refer <a href=\"https://learning.ccbp.in/projects/course?c_id=fe4c935d-3ad5-4bb8-a1a5-9b045ae70010&s_id=2f72d6fe-09a7-4c0a-b0db-196740c853a0&t_id=6535e48d-fb4e-45c4-9654-3da423c79e26\" target=\"_blank\">this</a> session for better understanding.\n\n</details>\n\n#### Design Files\n\n<details>\n<summary>Click to view</summary>\n\n- You can check the **Design Files** for different devices <a href=\"https://www.figma.com/file/tPdVlj0p5PESmymNkHYVgk/Movies_App?node-id=0%3A1\" target=\"_blank\">here</a>.\n\n</details>\n\n### Set Up Instructions\n\n<details>\n<summary>Click to view</summary>\n\n- Download dependencies by running `npm install`\n- Start up the app using `npm start`\n</details>\n\n### Completion Instructions\n\n<details>\n<summary>Functionality to be added</summary>\n<br/>\nThe app must have the following functionalities\n\n- **Login Route**\n\n  - When an invalid username and password are provided and the **Login** button is clicked, then the respective error message received from the response should be displayed\n  - When a valid username and password are provided and the **Login** button is clicked, then the page should be navigated to the Home Route\n  - When an unauthenticated user tries to access the Home Route, Popular Route, Search Route, Account Route and MovieItemDetails Route, then the page should be navigated to Login Route\n  - When an authenticated user tries to access the Home Route, Popular Route, Search Route, Account Route and MovieItemDetails Route, then the page should be navigated to the respective route\n  - When an authenticated user tries to access the Login Route, then the page should be navigated to the Home Route\n\n- **Home Route**\n\n  - When an authenticated user opens the Home Route,\n\n    - An HTTP Get request should be made to **trendingNowMoviesApiUrl**, **originalsApiUrl**, **topRatedMoviesApiUrl**\n\n      - **_Loader_** should be displayed while fetching the each data\n      - After all API URLs data is fetched successfully,\n        - a random movie title and movie poster with its details should be displayed from the originals response\n        - display the list of movies received from the trending now movies response\n        - display the list of movies received from the top rated movies response\n        - display the list of movies received from the originals response\n      - If any of the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/react-js/failure-img.png) should be displayed respectively\n        - When the **Try Again** button is clicked, then the respective HTTP GET request should be made\n\n    - When a **Movie** item is clicked, then the page should be navigated to the Movie Item Details Route\n    - When the **Popular** link in the Navbar is clicked, then the page should be navigated to the Popular Route\n    - When the **Search** icon is clicked, then the page should be navigated to the Search Route\n\n- **Popular Route**\n\n  - When an authenticated user opens the Popular Route\n\n    - An HTTP GET request should be made to **popularMoviesApiUrl**\n\n      - **_Loader_** should be displayed while fetching the data\n      - After the data is fetched successfully, the response received should be displayed\n      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/react-js/failure-img.png) should be displayed\n        - When the **Try Again** button is clicked, an HTTP GET request should be made to **popularMoviesApiUrl**\n\n    - When a **Movie** item is clicked, then the page should be navigated to the Movie Item Details Route\n    - When the **Movies** logo is clicked, then the page should be navigated to the Home Route\n    - When the **Home** link in the Navbar is clicked, then the page should be navigated to the Home Route\n    - When the **Search** icon is clicked, then the page should be navigated to the Search Route\n\n- **Movie Item details Route**\n\n  - When an authenticated user opens the Movie Item Details Route\n\n    - An HTTP GET request should be made to **getMovieItemDetailsApiUrl**\n\n      - **_Loader_** should be displayed while fetching the data\n      - After the data is fetched successfully,\n        - movie item details received from the response should be displayed\n        - display the list of similar movies received from the response\n      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/react-js/failure-img.png) should be displayed\n        - When the **Try Again** button is clicked, an HTTP GET request should be made to **getMovieItemDetailsApiUrl**\n\n    - When the **Movies** logo is clicked, then the page should be navigated to the Home Route\n    - When the **Home** link in the Navbar is clicked, then the page should be navigated to the Home Route\n    - When the **Popular** link in the Navbar is clicked, then the page should be navigated to the Popular Route\n    - When the **Search** icon is clicked, then the page should be navigated to the Search Route\n\n- **Search Route**\n\n  - When an authenticated user opens the Search Route\n\n    - When a value is provided in the search input and a button with a search icon is clicked\n\n      - Make an HTTP GET request to the **searchMoviesApiUrl** with query parameter `search` with value as the text provided in the search input\n      - **_Loader_** should be displayed while fetching the data\n      - After the data is fetched successfully, display the list of movies received in the response\n      - If the HTTP GET request made is unsuccessful, then the [Failure View](https://assets.ccbp.in/frontend/react-js/failure-img.png) should be displayed\n        - When the **Try Again** button is clicked, an HTTP GET request should be made to **searchMoviesApiUrl**\n      - When the HTTP GET request made to the **searchMoviesApiUrl** returns an empty list for movies then [No Movies View](https://res.cloudinary.com/do4qwwms8/image/upload/v1635502157/no-movies-view_kg7qpp.png) should be displayed\n\n    - When a **Movie** item is clicked, then the page should be navigated to the Movie Item Details Route\n    - When the **Movies** logo is clicked, then the page should be navigated to the Home Route\n    - When the **Home** link in the Navbar is clicked, then the page should be navigated to the Home Route\n    - When the **Popular** link in the Navbar is clicked, then the page should be navigated to the Popular Route\n\n- **Account Route**\n\n  - When an authenticated user opens the Account Route\n    - The username which was provided in the login, should be displayed\n    - The password which was provided in the login, should be displayed in masked\n    - When the **Logout** button is clicked, then the page should be navigated to the Login Route\n\n- **Not Found Route**\n\n  - When a random path is provided as the URL, then the page should navigate to the Not Found Route\n\n- Users should be able to view the website responsively in mobile view, tablet view as well\n\n</details>\n\n### Quick Tips\n\n<details>\n<summary>Click to view</summary>\n\n- You can use React-slick third party library to implement carousel\n  - React Slick <a href=\"https://react-slick.neostack.com/docs/get-started\" target=\"_blank\">Documentation</a>\n  - React Slick implementation <a href=\"https://codesandbox.io/s/w7z4v\" target=\"_blank\">CodeSandbox</a>\n\n</details>\n\n### Important Note\n\n<details>\n<summary>Click to view</summary>\n\n- Use the below prefix to access movie images or poster images from the keys - `backdrop_path` or `poster_path` in the API response\n\n  ```js\n  'https://image.tmdb.org/t/p/original/{backdrop_path}'\n\n  ```\n\n  ```js\n  'https://image.tmdb.org/t/p/original/{poster_path}'\n\n  ```\n\n- Check the usage in <a href=\"https://developers.themoviedb.org/3/configuration/get-api-configuration\" target=\"_blank\">this</a>\n\n</details>\n\n### Resources\n\n<details>\n<summary>API Requests & Responses</summary>\n<br/>\n\n**Login API**\n\n#### API: `https://apis.ccbp.in/login`\n\n#### Method: `POST`\n\n#### Description:\n\nReturns a response based on the credentials provided\n\n#### Sample Success Response\n\n```json\n{\n  \"jwt_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJhaHVsIiwicm9sZSI6IlBSSU1FX1VTRVIiLCJpYXQiOjE2MTk2Mjg2MTN9. nZDlFsnSWArLKKeF0QbmdVfLgzUbx1BGJsqa2kc_21Y\"\n}\n```\n\n#### Sample Failure Response\n\n```json\n{\n  \"status_code\": 404,\n  \"error_msg\": \"Username is not found\"\n}\n```\n\n**Trending Now Movies API**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/trending-movies`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the list of all movies\n\n#### Sample Response\n\n```json\n{\n  \"results\": [\n    {\n      \"backdrop_path\": \"/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg\",\n      \"id\": 370172,\n      \"overview\": \"Bond has left active service and is enjoying a tranquil life in Jamaica.\",\n      \"poster_path\": \"/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg\",\n      \"title\": \"No Time to Die\"\n    },\n    \"...\"\n  ]\n}\n```\n\n**Top Rated Movies API**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/top-rated-movies`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the list of all movies\n\n#### Sample Response\n\n```json\n{\n  \"results\": [\n    {\n      \"backdrop_path\": \"/5hNcsnMkwU2LknLoru73c76el3z.jpg\",\n      \"id\": 19404,\n      \"overview\": \"Raj is a rich, carefree, happy-go-lucky second generation NRI.\",\n      \"poster_path\": \"/2CAL2433ZeIihfX1Hb2139CX0pW.jpg\",\n      \"title\": \"Dilwale Dulhania Le Jayenge\"\n    },\n    \"...\"\n  ]\n}\n```\n\n**Originals API**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/originals`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the list of all movies\n\n#### Sample Response\n\n```json\n{\n  \"results\": [\n    {\n      \"backdrop_path\": \"/c7k9ZZb1MoFzJeyjphKRMLHOgqU.jpg\",\n      \"id\": 1991,\n      \"overview\": \"Austin's hottest DJ, Jungle Julia, sets out into the night to unwind with her two friends Shanna and Arlene.\",\n      \"poster_path\": \"/iy6016EG1Zt44tFyxc0rATKL2hr.jpg\",\n      \"title\": \"Death Proof\"\n    },\n    \"...\"\n  ]\n}\n```\n\n**Popular Movies API**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/popular-movies`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the list of all movies\n\n#### Sample Response\n\n```json\n{\n  \"results\": [\n    {\n      \"backdrop_path\": \"/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg\",\n      \"id\": 580489,\n      \"poster_path\": \"/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg\",\n      \"title\": \"Venom: Let There Be Carnage\"\n    },\n    \"...\"\n  ]\n}\n```\n\n**Movie Item Details API**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/movies/{movieId}`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the details of the movie\n\n#### Sample Response\n\n```json\n{\n  \"movie\": {\n    \"adult\": false,\n    \"backdrop_path\": \"/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg\",\n    \"budget\": 110000000,\n    \"genres\": [\n      {\n        \"id\": 878,\n        \"name\": \"Science Fiction\"\n      },\n      {\n        \"id\": 28,\n        \"name\": \"Action\"\n      },\n      {\n        \"id\": 12,\n        \"name\": \"Adventure\"\n      }\n    ],\n    \"id\": 580489,\n    \"overview\": \"After finding a host body in investigative reporter Eddie Brock, the alien symbiote must face a new enemy, Carnage, the alter ego of serial killer Cletus Kasady.\",\n    \"poster_path\": \"/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg\",\n    \"release_date\": \"2021-09-30\",\n    \"runtime\": 97,\n    \"similar_movies\": [\n      {\n        \"backdrop_path\": \"/eeijXm3553xvuFbkPFkDG6CLCbQ.jpg\",\n        \"id\": 438631,\n        \"poster_path\": \"/d5NXSklXo0qyIYkgV94XAgMIckC.jpg\",\n        \"title\": \"Dune\"\n      },\n      {\n        \"backdrop_path\": \"/u5Fp9GBy9W8fqkuGfLBuuoJf57Z.jpg\",\n        \"id\": 370172,\n        \"poster_path\": \"/iUgygt3fscRoKWCV1d0C7FbM9TP.jpg\",\n        \"title\": \"No Time to Die\"\n      },\n      {\n        \"backdrop_path\": \"/cinER0ESG0eJ49kXlExM0MEWGxW.jpg\",\n        \"id\": 566525,\n        \"poster_path\": \"/xeItgLK9qcafxbd8kYgv7XnMEog.jpg\",\n        \"title\": \"Shang-Chi ad the Legend of the Ten Rings\"\n      },\n      {\n        \"backdrop_path\": \"/c7k9ZZb1MoFzJeyjphKRMLHOgqU.jpg\",\n        \"id\": 1991,\n        \"poster_path\": \"/iy6016EG1Zt44tFyxc0rATKL2hr.jpg\",\n        \"title\": \"Death Proof\"\n      }\n    ],\n    \"spoken_languages\": [\n      {\n        \"id\": 1,\n        \"english_name\": \"English\"\n      }\n    ],\n    \"title\": \"Venom: Let There Be Carnage\",\n    \"vote_average\": 6.8,\n    \"vote_count\": 1514\n  }\n}\n```\n\n**searchMoviesApiUrl**\n\n#### API: `https://bb4zsgwzaa.execute-api.ap-south-1.amazonaws.com/beta/ma/movies-search`\n\n#### Method: `GET`\n\n#### Description:\n\nReturns a response containing the list of all movies\n\n#### Sample Response\n\n```json\n{\n  \"results\": [\n    {\n      \"backdrop_path\": \"/lNyLSOKMMeUPr1RsL4KcRuIXwHt.jpg\",\n      \"id\": 580489,\n      \"poster_path\": \"/rjkmN1dniUHVYAtwuV3Tji7FsDO.jpg\",\n      \"title\": \"Venom: Let There Be Carnage\"\n    },\n    ,\n    \"...\"\n  ]\n}\n```\n\n</details>\n\n### Stretch Goals\n\nIf you complete the main features of the project you can try out the below features as well.\n\n**Note:** Just a reminder the additional functionality is just extra practice using the tools we have learned. These are not required. If you do not reach the stretch goals, don't worry.\n\n<details>\n<summary>Additional Functionality to be added</summary>\n\n- TV Shows Route\n  - Users should be able to select and view TV shows using the TV Shows link in the navbar in a separate page.\n  - TV Shows should have genre filter\n  - Users can browse TV shows using pagination buttons.\n  - Users should be able to search for TV Shows as well.\n- Animation Functionality:\n  - When a user hover particular movie then it should show about more details of a title with scaled animation.\n\n</details>\n\n### Important Note\n\n<details>\n<summary>Click to view</summary>\n\n<br/>\n\n**The following instructions are required for the tests to pass**\n\n- **Note:**\n\n  - For Mini Projects, You have to use normal HTML elements to style the React Components. Usage of `styled-components` (CSS in JS) to style React components are not supported in Mini Projects. Test cases won't be passed, If you use styled components.\n  - Refer to the below Example for the usage of `testid` in the HTML elements.\n    - Example: `<div testid=\"questionItem\" className=\"question-item\"/>`.\n\n- **Routes**\n\n  - `Login` route should consist of `/login` in the URL path\n  - `Home` Route should consist of `/` in the URL path\n  - `Popular` Route should consist of `/popular` in the URL path\n  - `Movie Item Details` route should consist of `/movies/:id` in the URL path\n  - `Search` Route should consist of `/search` in the URL path\n  - `Account` Route should consist of `/account` in the URL path\n\n- The Movies App Logo image in Header should consist of alt attribute value as `website logo`\n- The Profile image in the Header should consist of alt attribute value as `profile`\n- The HTML button element with search icon in the header should have the `testid` attribute value as **searchButton** to it\n- The Failure View image should consist of alt attribute value as `failure view`\n- Wrap the `Loader` component with an HTML container element and add the `testid` attribute value as **loader** to it\n- `FaGoogle` icon from react-icons should be used for the **Google Icon** button in Footer\n- `FaTwitter` icon from react-icons should be used for the **Twitter Icon** button in Footer\n- `FaInstagram` icon from react-icons should be used for the **Instagram Icon** button in Footer\n- `FaYoutube` icon from react-icons should be used for the **Youtube Icon** button in Footer\n\n  ```jsx\n  <div className=\"loader-container\" testid=\"loader\">\n    <Loader type=\"ThreeDots\" color=\"#263868\" height={50} width={50} />\n  </div>\n  ```\n\n- **Login Route**\n\n  - The Movies App Logo image should consist of alt attribute value as `login website logo`\n\n- **Home Route**\n\n  - The movie images in the Home Route should have the alt as the value of the key `title` from each object in trendingNowMoviesResponse, topRatedMoviesResponse, OriginalsResponse\n\n- **MovieItemDetails Route**\n\n  - The movie images in the MovieItemDetails Route should have the alt as the value of the key `title` from each object in similarMoviesResponse\n\n- **Search Route**\n\n  - When the search results return an empty list, then the No Movies image should consist of alt attribute value as `no movies`\n\n- **Not Found Route**\n  - The Not Found image should consist of alt attribute value as `not found`\n\n</details>\n\n### Project Submission Instructions\n\n- For Mini Projects, you no need to submit the code using `ccbp submit RJSCP79ATS`, Though you submit the test cases may or may not succeed and you can ignore the result, Test cases will be added soon.\n\n- For Mini Projects, you need to only publish/deploy the code using `ccbp publish RJSCP79ATS domain_name.ccbp.tech`. So that our team will be able to see that code and deployed URL( Ex: something.ccbp.tech) and will share feedback to you if required.\n\n> ### _Things to Keep in Mind_\n>\n> - All components you implement should go in the `src/components` directory.\n> - **Do not remove the pre-filled code**\n> - Want to quickly review some of the concepts you’ve been learning? Take a look at the Cheat Sheets.\n",
+    "content_type": "MARKDOWN",
+    "toughness": "EASY",
+    "language": "ENGLISH",
+    "question_type": "IDE_BASED_CODING",
+    "question_asked_by_companies_info": [],
+    "question_format": "CODING_PRACTICE",
+    "test_cases": [
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_1",
+        "display_text": "When \"/account\" is provided as the URL path by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_2",
+        "display_text": "When \"/account\" is provided as the URL by an authenticated user, then the page should be navigated to Account Route and should consist of an HTML main heading element with text content as \"Account\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_3",
+        "display_text": "Account Route should consist of an HTML main heading element with text content as \"Account\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_4",
+        "display_text": "Account Route should consist of an HTML paragraph element with text content as \"Member ship\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_5",
+        "display_text": "Account Route should consist of an HTML paragraph element with text content as \"Password\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_6",
+        "display_text": "Account Route should consist of an HTML paragraph element with text content as \"Plan details \"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_7",
+        "display_text": "Account Route should consist of an HTML paragraph element with text content as \"Premium\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_8",
+        "display_text": "Account Route should consist of an HTML paragraph element with text content as \"Ultra HD\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_9",
+        "display_text": "Account Route should consist of an HTML button element with text content as \"Logout\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_10",
+        "display_text": "When the \"Logout\" button in the Account Route is clicked, then the Cookies.remove() method should be called with the argument as \"jwt_token\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_11",
+        "display_text": "When the \"Logout\" button in the Account Route is clicked, the history.replace() method should be called with the argument as \"/login\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_12",
+        "display_text": "When the \"Logout\" button in the Account Route is clicked, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_13",
+        "display_text": "Home Route should consist of an HTML image element in the Header with alt attribute value as \"website logo\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_14",
+        "display_text": "Home Route should consist of an HTML image element in the Header with alt attribute value as \"website logo\", wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_15",
+        "display_text": "Home Route should consist of at least one HTML unordered list element to display the list of nav items in the Header",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_16",
+        "display_text": "Home Route should consist of HTML list elements to display the nav items in the Header",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_17",
+        "display_text": "Home Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_18",
+        "display_text": "Popular Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_19",
+        "display_text": "Search Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_20",
+        "display_text": "MovieItemDetails Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_21",
+        "display_text": "Account Route should consist of an HTML element with text content as \"Home\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_22",
+        "display_text": "Home Route should consist of an HTML element with text content as \"Popular\" wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_23",
+        "display_text": "Home Route should consist of an HTML button element with testid attribute value as \"searchButton\" in the Header",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_24",
+        "display_text": "Home Route should consist of an HTML image element in the Header with alt attribute value as \"profile\" and src as the given profile image URL",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_25",
+        "display_text": "When the website logo in the Header is clicked, then the page should be navigated to Home Route and consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_26",
+        "display_text": "When the Home link in the Header is clicked in the Popular Route, then the page should be navigated to Home Route and consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_27",
+        "display_text": "When the Home link in the Header is clicked in the Search Route, then the page should be navigated to Home Route and consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_28",
+        "display_text": "When the Home link in the Header is clicked in the MovieItemDetails Route, then the page should be navigated to Home Route and consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_29",
+        "display_text": "When the Home link in the Header is clicked in the Account Route, then the page should be navigated to Home Route and consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_30",
+        "display_text": "When the Popular link in the Header is clicked in the Home Route, then the page should be navigated to Popular Route and consist of HTML image element with alt and src values as the values of the keys \"title\" in each option of the corresponding movie item received from the response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_31",
+        "display_text": "Home Route should consist of an HTML paragraph element in the footer with text content as \"Contact us\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_32",
+        "display_text": "Popular Route should consist of an HTML paragraph element in the footer with text content as \"Contact us\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_33",
+        "display_text": "Search Route should consist of an HTML paragraph element in the footer with text content as \"Contact us\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_34",
+        "display_text": "MovieItemDetails Route should consist of an HTML paragraph element in the footer with text content as \"Contact us\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_35",
+        "display_text": "Account Route should consist of an HTML paragraph element in the footer with text content as \"Contact us\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_36",
+        "display_text": "When \"/\" is provided as the URL path by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_37",
+        "display_text": "When \"/\" is provided as the URL by an authenticated user, then the page should be navigated to Home Route and should consist of an HTML button element with text content as \"Play\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_38",
+        "display_text": "Home Route should consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_39",
+        "display_text": "Home Route should consist of an HTML main heading element with text content as \"Top Rated\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_40",
+        "display_text": "Home Route should consist of an HTML main heading element with text content as \"Originals\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_41",
+        "display_text": "When the Home Route is opened, an HTML container elements with testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_42",
+        "display_text": "When the Home Route is opened, an HTTP GET request should be made to the Trending Now Movies API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_43",
+        "display_text": "When the Home Route is opened, an HTTP GET request should be made to the Top Rated Movies API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_44",
+        "display_text": "When the Home Route is opened, an HTTP GET request should be made to the Originals API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_45",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"title\" taken randomly from received originals response",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_46",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"overview\" taken randomly from received originals response",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_47",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of an HTML button element with text content as \"Play\"",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_48",
+        "display_text": "When the movie item in the trending now movies slider is clicked in the Home Route, then the page should be navigated to movieItemDetails Route with \"/movies/:id\" in the URL path",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_49",
+        "display_text": "When the movie item in the top rated movies slider is clicked in the Home Route, then the page should be navigated to movieItemDetails Route with \"/movies/:id\" in the URL path",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_50",
+        "display_text": "When the movie item in the original movies slider is clicked in the Home Route, then the page should be navigated to movieItemDetails Route with \"/movies/:id\" in the URL path",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_51",
+        "display_text": "When the HTTP GET request made to Trending Now Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_52",
+        "display_text": "When the HTTP GET request made to Trending Now Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_53",
+        "display_text": "When the HTTP GET request made to Trending Now Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_54",
+        "display_text": "When the HTTP GET request made to Trending Now Movies API URL in the Home Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to Trending Now Movies API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_55",
+        "display_text": "When the HTTP GET request made to Top Rated Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_56",
+        "display_text": "When the HTTP GET request made to Top Rated Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_57",
+        "display_text": "When the HTTP GET request made to Top Rated Movies API URL in the Home Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_58",
+        "display_text": "When the HTTP GET request made to Top Rated Movies API URL in the Home Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to Top Rated Movies API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_59",
+        "display_text": "When the HTTP GET request made to Originals API URL in the Home Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_60",
+        "display_text": "When the HTTP GET request made to Originals API URL in the Home Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_61",
+        "display_text": "When the HTTP GET request made to Originals API URL in the Home Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_62",
+        "display_text": "When the HTTP GET request made to Originals API URL in the Home Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to Originals API URL",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_63",
+        "display_text": "When \"/login\" is provided as the URL by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_64",
+        "display_text": "When \"/login\" is provided as the URL by an authenticated user, then the page should be navigated to Home Route and should consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_65",
+        "display_text": "Login Route should consist of an HTML form element",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_66",
+        "display_text": "Login Route should consist of an HTML image element with alt attribute value as \"login website logo\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_67",
+        "display_text": "Login Route should consist of an HTML input element with label text as \"USERNAME\" and type attribute value as \"text\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_68",
+        "display_text": "Login Route should consist of an HTML input element with label text as \"PASSWORD\" and type attribute value as \"password\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_69",
+        "display_text": "Login Route should consist of an HTML button element with text content as \"Login\" and type attribute value as \"submit\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_70",
+        "display_text": "When a non-empty value is provided in the HTML input element with the label text as \"USERNAME\", then the value provided should be displayed in the HTML input element",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_71",
+        "display_text": "When a non-empty value is provided in the HTML input element with the label text as \"PASSWORD\", then the value provided should be displayed in the HTML input element",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_72",
+        "display_text": "When non-empty values are provided for username and password input and the Login button is clicked, an HTTP POST request should be made to loginApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_73",
+        "display_text": "When non-empty values are provided for username and password input and the Login button is clicked, then an HTTP POST request should be made to loginApiUrl with request object containing the keys \"username\", \"password\" and \"request_token\" with the values provided respectively",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_74",
+        "display_text": "When an invalid username and password are provided and the Login button is clicked, then the page should consist of an HTML paragraph element with text content as respective error message and the page should not be navigated",
+        "weightage": 10
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_75",
+        "display_text": "When a valid username and password are provided and the Login button is clicked, then the Cookies.set() method should be called with three arguments - \"jwt_token\" string as the first argument, JWT token value as the second argument, and expiry days as the third argument",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_76",
+        "display_text": "When a valid username and password are provided and the Login button is clicked, then the history.replace() method should be called with the argument \"/\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_77",
+        "display_text": "When a valid username and password are provided and the Login button is clicked,  then the page should be navigated to Home Route and should consist of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 15
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_78",
+        "display_text": "When HTTP GET request in the movieItemDetails Route is successful, then the page should consist of at least two HTML list items, and the Genres List, Spoken Languages List and Similar Movies List should be rendered using a unique key as a prop to display each genre, spoken language and similar movie item respectively",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_79",
+        "display_text": "When \"/movies/:id\" is provided as the URL path by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_80",
+        "display_text": "When \"/movies/:id\" is provided as the URL by an authenticated user, then the page should be navigated to movieItemDetails Route and should consist of an HTML main heading element with text content as the value of the key \"title\" from received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_81",
+        "display_text": "Movie Item Details Route should consist of an HTML button element with text content as \"Play\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_82",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"More like this\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_83",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Genres\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_84",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Audio Available\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_85",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Rating Count\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_86",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Rating Average\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_87",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Budget\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_88",
+        "display_text": "Movie Item Details Route should consist of an HTML main heading element with text content as \"Release Date\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_89",
+        "display_text": "When the Movie Item Details Route is opened, an HTML container element with testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_90",
+        "display_text": "When the Movie Item Details Route is opened, an HTTP GET request should be made to the movieItemDetailsApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_91",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML main heading element with text content as the value of the key \"title\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_92",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"runtime\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_93",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content based on the value of the key \"adult\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_94",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content based on the value of the key \"release_date\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_95",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"overview\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_96",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph elements with text content as the value of the key \"name\" in genres from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_97",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph elements with text content as the value of the key \"english_name\" in spoken_languages from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_98",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"vote_count\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_99",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"vote_average\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_100",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"budget\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_101",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML paragraph element with text content as the value of the key \"release_date\" from the received movieItemDetails response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_102",
+        "display_text": "When the HTTP GET request in the Movie Item Details Route is successful, then the page should consist of an HTML image elements with alt and src as the values of the keys \"title\" and \"poster_path\" respectively in \"similar_movies\" from the received Movie Item Details response",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_103",
+        "display_text": "When the HTTP GET request made to movieItemDetailsApiUrl in the Movie Item Details Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_104",
+        "display_text": "When the HTTP GET request made to movieItemDetailsApiUrl in the Home Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_105",
+        "display_text": "When the HTTP GET request made to movieItemDetailsApiUrl in the Home Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_106",
+        "display_text": "When the HTTP GET request made to movieItemDetailsApiUrl in the Home Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to movieItemDetailsApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_107",
+        "display_text": "When a random path is provided as the URL path, then the page should consist of an HTML main heading element with text content as \"Lost Your Way\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_108",
+        "display_text": "When a random path is provided as the URL path, then the page should consist of an HTML paragraph element with text content as \"Sorry, we cannot find that page. You will find lots to explore on the home page.\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_109",
+        "display_text": "When a random path is provided as the URL path, then the page should consist of an HTML button element with text content as \"Go to Home\" wrapper with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_110",
+        "display_text": "When a random path is provided as the URL path, then the page should consist of an HTML button element with text content as \"Go to Home\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_111",
+        "display_text": "When a random path is provided as the URL path and the \"Go to Home\" button is clicked, then the page should be navigated to Home Route and consists of an HTML main heading element with text content as \"Trending Now\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_112",
+        "display_text": "When \"/popular\" is provided as the URL path by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_113",
+        "display_text": "When \"/popular\" is provided as the URL by an authenticated user, then the page should be navigated to Popular Route and should consist of an HTML image element with alt and src as the values of the keys \"title\" and \"poster_path\" respectively from the popular movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_114",
+        "display_text": "When the Popular Route is opened, an HTML container element with testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_115",
+        "display_text": "When the Popular Route is opened, an HTTP GET request should be made to the popularMoviesApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_116",
+        "display_text": "When the HTTP GET request in the Popular Route is successful, then the page should consist of HTML image elements wrapped with Link from react-router-dom",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_117",
+        "display_text": "When the HTTP GET request in the Popular Route is successful, then the page should consist of HTML image elements with alt and src as the values of the keys \"title\" and \"poster_path\" respectively from the popular movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_118",
+        "display_text": "When the movie item is clicked in the Popular Route, then the page should be navigated to movieItemDetails Route with \"/movies/:id\" in the URL path",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_119",
+        "display_text": "When the HTTP GET request made to popularMoviesApiUrl in the Popular Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_120",
+        "display_text": "When the HTTP GET request made to popularMoviesApiUrl in the Popular Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_121",
+        "display_text": "When the HTTP GET request made to popularMoviesApiUrl in the Popular Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_122",
+        "display_text": "When the HTTP GET request made to popularMoviesApiUrl in the Popular Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to popularMoviesApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_123",
+        "display_text": "When \"/search\" is provided as the URL path by an unauthenticated user, then the page should be navigated to Login Route and should consist of an HTML button element with text content as \"Login\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_124",
+        "display_text": "When \"/search\" is provided as the URL by an authenticated user, then the page should be navigated to Search Route",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_125",
+        "display_text": "Search Route should consist of an HTML search input element with type attribute value as \"search\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_126",
+        "display_text": "When a non-empty value is provided in an HTML search input element for search and an HTML button element with testid attribute value as \"searchButton\" is clicked, an HTML container element with testid attribute value as \"loader\" should be displayed while the HTTP GET request is in progress",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_127",
+        "display_text": "When a non-empty value is provided in an HTML input element for search and an HTML button element with testid attribute value as \"searchButton\" is clicked, an HTTP GET request should be made to the searchMoviesApiUrl with the value provided in the search input element as the value to query parameter \"query\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_128",
+        "display_text": "When a non-empty value is provided in search input and search button is clicked and the HTTP GET request in the Search Route is successful, then the page should consist of an image element with alt and src as the values of the keys \"title\" and \"poster_path\" from the search movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_129",
+        "display_text": "When the movie item is clicked in the Search Route, then the page should be navigated to movieItemDetails Route with \"/movies/:id\" in the URL path",
+        "weightage": null
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_130",
+        "display_text": "When a non-empty value is provided in search input and search button is clicked and the HTTP GET request in the Search Route is unsuccessful, then the page should consist of an HTML image element with alt attribute value as \"failure view\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_131",
+        "display_text": "When a non-empty value is provided in search input and search button is clicked and the HTTP GET request in the Search Route is unsuccessful, then the page should consist of an HTML main heading element with text content as \"Something went wrong. Please try again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_132",
+        "display_text": "When a non-empty value is provided in search input and search button is clicked and the HTTP GET request in the Search Route is unsuccessful, then the page should consist of an HTML button element with text content as \"Try Again\"",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_133",
+        "display_text": "When a non-empty value is provided in search input and search button is clicked and the HTTP GET request in the Search Route is unsuccessful and the \"Try Again\" button is clicked, then an HTTP GET request should be made to searchMoviesApiUrl",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_134",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the trending now movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_135",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the top rated movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_136",
+        "display_text": "When the HTTP GET request in the Home Route is successful, then the page should consist of HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the originals response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_137",
+        "display_text": "When the next arrow button is clicked in the trending now movies slider, the page should consist of the next HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the trending now movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_138",
+        "display_text": "When the previous arrow button is clicked in the trending now movies slider, the page should consist of the previous HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the trending now movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_139",
+        "display_text": "When the next arrow button is clicked in top rated movies slider, the page should consist of the next HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the top rated movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_140",
+        "display_text": "When the previous arrow button is clicked in top rated movies slider, the page should consist of the previous HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the top rated movies response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_141",
+        "display_text": "When the next arrow button is clicked in originals Slider, the page should consist of the next HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the originals response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_142",
+        "display_text": "When the previous arrow button is clicked in Action Movies Slider, the page should consist of the previous HTML image elements with alt and src as the values of the keys \"name\" and \"poster_path\" respectively from the originals response received",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_143",
+        "display_text": "Home Route should consist of an \"FaGoogle\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_144",
+        "display_text": "Popular Route should consist of an \"FaGoogle\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_145",
+        "display_text": "Search Route should consist of an \"FaGoogle\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_146",
+        "display_text": "Movie Item Details Route should consist of an \"FaGoogle\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_147",
+        "display_text": "Account Route should consist of an \"FaGoogle\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_148",
+        "display_text": "Home Route should consist of an \"FaTwitter\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_149",
+        "display_text": "Home Route should consist of an \"FaInstagram\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      },
+      {
+        "test_case_enum": "RJSCP79ATS_TEST_150",
+        "display_text": "Home Route should consist of an \"FaYoutube\" icon imported from the \"react-icons/fa\" package",
+        "weightage": 5
+      }
+    ],
+    "multimedia": [],
+    "solutions_metadata": [],
+    "hints": []
+  }
+]

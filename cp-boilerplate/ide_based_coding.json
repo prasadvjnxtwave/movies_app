@@ -1,0 +1,38 @@
+[
+  {
+    "question_id": "99d98975-1580-4d0d-a56a-1e5852afb5ea",
+    "ide_session_id": "dc651a54-4af9-447f-a3d7-d8b0ac32559c",
+    "short_text": "IPL Dashboard 1",
+    "question_key": "ipl_dashboard_1_1",
+    "question_text": "Will be automatically generated",
+    "content_type": "MARKDOWN",
+    "toughness": "EASY",
+    "language": "ENGLISH",
+    "question_type": "IDE_BASED_CODING",
+    "question_asked_by_companies_info": [],
+    "question_format": "CODING_PRACTICE",
+    "test_cases": [
+      {
+        "test_case_enum": "RJSCPYKKV8_TEST_1",
+        "display_text": "Page should render the teamsList data as a list containing a unique key as a prop for each team in Home Route",
+        "weightage": 5
+      },
+    ],
+    "multimedia": [],
+    "solutions_metadata": [
+      {
+        "ide_session_id": "286b1123-416a-42ee-b106-c92f5729e309",
+        "order": 1,
+        "title": {
+          "content": "IPL Dashboard 1",
+          "content_type": "MARKDOWN"
+        },
+        "description": {
+          "content": "An approach to develop IPL Dashboard 1",
+          "content_type": "MARKDOWN"
+        }
+      }
+    ],
+    "hints": []
+  }
+]

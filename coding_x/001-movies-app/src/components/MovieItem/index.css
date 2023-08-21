@@ -1,0 +1,38 @@
+.link-item {
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.movie-icon-item {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-icon-item {
+    margin-right: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+.movie-image {
+  height: 100px;
+  width: 90px;
+  border: none;
+  border-radius: 8px;
+}
+
+@media screen and (min-width: 768px) {
+  .movie-image {
+    height: 140px;
+    width: 155px;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .movie-image {
+    height: 170px;
+    width: 265px;
+  }
+}
